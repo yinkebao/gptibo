@@ -95,7 +95,7 @@ npm run preview:worker
 | 管理后台 | `/admin` |
 | 代理工作台 | `/partner` |
 
-管理员登录需要配置自己的管理员身份、TOTP 和邮件验证服务。默认配置不提供可直接登录的管理员账号，也不会发起真实支付、采购或通知。
+管理员登录需要配置自己的管理员身份、TOTP 和邮件验证服务。Go 部署完成后，在仓库根目录运行 `npm run admin:setup`，按[管理员初始化说明](services/storefront/README.md#初始化管理员)绑定验证器并重启服务。Cloudflare 本地环境请配置 `.dev.vars` 中的 `ADMIN_USERNAME`、`ADMIN_EMAIL`、`ADMIN_TOTP_SECRET`、`RESEND_API_KEY` 和 `RESEND_FROM` 后重启 Wrangler；TOTP 使用独立生成的 20 字节随机数的 Base32 编码。默认配置不提供可直接登录的管理员账号，也不会发起真实支付、采购或通知。
 
 ## 项目结构
 
